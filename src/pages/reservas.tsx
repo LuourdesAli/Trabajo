@@ -1,8 +1,15 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { getLocations } from "@/resources/resource";
 
 export default function Ejemplo() {
+  useEffect(() => {
+    const locations = async () => {const response = await getLocations()
+      console.log(response)
+    };
+    locations();
+  }, []);
   return (
     <div className="">
       <div className="flex justify-between items-center  mb-6">
@@ -48,7 +55,11 @@ export default function Ejemplo() {
         <div className="flex justify-between">
           <p className=" text-2xl font-bold"> Mi historial de uso </p>
           <div className="flex justify-center  gap-4">
-            <select className="bg-transparent rounded-lg px-4 py-3 border border-black" name="" id="">
+            <select
+              className="bg-transparent rounded-lg px-4 py-3 border border-black"
+              name=""
+              id=""
+            >
               <option defaultValue="VER TODOS" value="">
                 VER TODOS
               </option>
