@@ -11,37 +11,37 @@ export default function Ejemplo() {
     locations();
   }, []);
   return (
-    <div className="">
+    <div className=" bg-slate-200">
       <div className="flex justify-between items-center  mb-6">
         <p className="font-medium text-2xl ">Mis Puntos iPark Rewards</p>
       </div>
       <div className="grid grid-cols-2 gap-10  mb-12">
         <div className="col-span-1  bg-white px-4 rounded-lg ">
-          <div className="mt-4  ">
-            <p className="bg-yellow-600  px-4  py-1 rounded-lg font-bold  text-white text-3xl">
+          <div className="mt-4 max-w-28">
+            <p className="bg-yellow-600 text-center px-4  py-1 rounded-lg font-bold  text-white text-3xl">
               {" "}
-              Golden
+              Gold
             </p>
           </div>
-          <p className=" mt-8 font-bold text-sm">PUNTOS DISPONIBLES</p>
+          <p className=" mt-8 font-bold text-sm text-[#626262] ">PUNTOS DISPONIBLES</p>
           <p className=" mt-2 mb-6 font-bold text-3xl">456</p>
           <div className="mb-4">
-            <Link href={"#"} className="text-blue-700">
+            <Link href={"#"} className="text-blue-700 text-xs font-bold">
               ¿CÓMO FUNCIONA?
             </Link>
           </div>
         </div>
-        <div className="col-span-1 bg-gray-300 px-4 rounded-lg">
+        <div className="col-span-1 bg-gray-500 px-4 rounded-lg">
           <div className="mt-4 mb-8 ">
-            <p className=" mb-5 "> ¡Invita y gana!</p>
-            <p>
+            <p className=" mb-5 text-2xl font-bold text-white"> ¡Invita y gana!</p>
+            <p className="text-white font-normal text-lg mt-5">
               Comparte este código con tus amigos y gana puntos iPark Rewards.
             </p>
           </div>
-          <div className="bg-white ounded-lg py-4 pl-4 rounded-lg flex justify-between mb-6 ">
+          <div className="bg-white ounded-lg py-4 pl-4 rounded-lg flex justify-between mb-6  ">
             <div>
-              <p>CÓDIGO DE INVITACIÓN</p>
-              <p>iP23AV</p>
+              <p className="font-bold text-xs leading-3 text-black mb-2">CÓDIGO DE INVITACIÓN</p>
+              <p className="font-medium text-base">iP23AV</p>
             </div>
             <div>
               <button className="px-4">
@@ -63,34 +63,12 @@ export default function Ejemplo() {
               <option defaultValue="VER TODOS" value="">
                 VER TODOS
               </option>
-              <option value="">1</option>
-              <option value="">2</option>
+              <option value="">ACUMULADOS</option>
+              <option value="">REDIMIDOS</option>
             </select>
-            <button className="flex justify-center items-center">
+            <button className="flex justify-center items-center box-border  p-2 gap-2  border border-[#121820] rounded-lg">
               {" "}
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  y="0.5"
-                  width="39"
-                  height="39"
-                  rx="7.5"
-                  stroke="#121820"
-                />
-                <path d="M12 12H28L26 14H12V12Z" fill="#121820" />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M28 16H12V28H28V16ZM17 23H14V26H16L17 23Z"
-                  fill="#121820"
-                />
-              </svg>
+              <Image  src="/Calendar-day.svg" alt="icon" width={32} height={42} />
             </button>
           </div>
         </div>
@@ -233,7 +211,7 @@ export default function Ejemplo() {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-center  ">
+        <div className=" flex flex-col items-center  mt-4 ">
           <div className="flex items-center">
             <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
           </div>
