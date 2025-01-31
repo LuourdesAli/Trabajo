@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { getLocations } from "@/resources/resource";
+import Login from "@/componentes/login";
+
 
 export default function Ejemplo() {
   useEffect(() => {
@@ -12,6 +14,7 @@ export default function Ejemplo() {
   }, []);
   return (
     <div className=" bg-slate-200">
+      <Login/>
       <div className="flex justify-between items-center  mb-6">
         <p className="font-medium text-2xl ">Mis Puntos iPark Rewards</p>
       </div>
