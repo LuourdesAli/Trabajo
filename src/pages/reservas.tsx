@@ -196,20 +196,30 @@ export default function Ejemplo() {
           pagues tus estancias con ellos!
         </p>
         <div className="mt-6 flex justify-between gap-7">
-          <div className="flex-1 bg-[#f4f4f4] rounded-lg  " id="level-Blue">
-            <div className="bg-blue-600 text-white rounded-t-lg py-6 ">
-              <h3 className="text-lg font-bold text-center">Blue</h3>
+          <div className="">
+            <div className="flex-1 bg-[#f4f4f4] rounded-lg" id="level-Blue">
+              <div className="bg-blue-600 text-white rounded-t-lg py-6 ">
+                <h3 className="text-lg font-bold text-center">Blue</h3>
+              </div>
+              <div className="p-4">
+                <p className="font-medium text-base mt-4">
+                  Acumulación de puntos:
+                </p>
+                <p className="font-bold text-base mt-2">
+                  2% de tu tarifa diaria bonificado en monedero iPark.
+                </p>
+              </div>
             </div>
-            <div className="p-4">
-              <p className="font-medium text-base mt-4">
-                Acumulación de puntos:
-              </p>
-              <p className="font-bold text-base mt-2">
-                2% de tu tarifa diaria bonificado en monedero iPark.
+            <div className="flex flex-col items-center mt-4">
+              <div className="flex items-center">
+                <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+              </div>
+              <p className="text-xs font-medium text-center mt-1 mb-8">
+                Tú estás aquí
               </p>
             </div>
           </div>
-          <div className="flex-1 bg-[#f4f4f4]  rounded-lg " id="level-Gold" >
+          <div className="flex-1 bg-[#f4f4f4]  rounded-lg " id="level-Gold">
             <div className="bg-yellow-500 text-white pt-4 rounded-t-lg ">
               <h3 className="text-lg font-bold text-center ">Gold</h3>
               <p className="text-xs font-medium text-center  pb-4">
@@ -245,44 +255,59 @@ export default function Ejemplo() {
           </div>
         </div>
         <div className="flex justify-around gap-12">
-          
-         {/* Blue */}
-      {data?.LevelShort === "Blue" ? (
-        <>blue</>
-        // <div className="flex flex-col mt-4 items-center">
-        //   <div className="flex">
-        //     <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
-        //   </div>
-        //   <p className="text-xs font-medium text-center mt-1 mb-8">
-        //     Tú estás aquí
-        //   </p>
-        // </div>
-      ):data?.LevelShort === "Gold"? (<>gold</>):(<>Platinum</>)}
+          {/* Blue */}
+          {data?.LevelShort === "Blue" ? (
+            <div className="flex flex-col mt-4 items-center">
+              <div className="flex">
+                <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+              </div>
+              <p className="text-xs font-medium text-center mt-1 mb-8">
+                Tú estás aquí
+              </p>
+            </div>
+          ) : data?.LevelShort === "Gold" ? (
+            <div className="flex flex-col items-center mt-4">
+              <div className="flex items-center">
+                <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+              </div>
+              <p className="text-xs font-medium text-center mt-1 mb-8">
+                Tú estás aquí
+              </p>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center mt-4">
+              <div className="flex items-center">
+                <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+              </div>
+              <p className="text-xs font-medium text-center mt-1 mb-8">
+                Tú estás aquí
+              </p>
+            </div>
+          )}
 
-      {/* Gold */}
-      {data?.LevelShort === "Gold" && (
-        <div className="flex flex-col items-center mt-4">
-          <div className="flex items-center">
-            <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
-          </div>
-          <p className="text-xs font-medium text-center mt-1 mb-8">
-            Tú estás aquí
-          </p>
-        </div>
-      )}
+          {/* Gold */}
+          {data?.LevelShort === "Gold" && (
+            <div className="flex flex-col items-center mt-4">
+              <div className="flex items-center">
+                <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+              </div>
+              <p className="text-xs font-medium text-center mt-1 mb-8">
+                Tú estás aquí
+              </p>
+            </div>
+          )}
 
-      {/* Platinum */}
-      {data?.LevelShort === "Platinum" && (
-        <div className="flex flex-col items-center mt-4">
-          <div className="flex items-center">
-            <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
-          </div>
-          <p className="text-xs font-medium text-center mt-1 mb-8">
-            Tú estás aquí
-          </p>
-        </div>
-      )}
-
+          {/* Platinum */}
+          {data?.LevelShort === "Platinum" && (
+            <div className="flex flex-col items-center mt-4">
+              <div className="flex items-center">
+                <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+              </div>
+              <p className="text-xs font-medium text-center mt-1 mb-8">
+                Tú estás aquí
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
