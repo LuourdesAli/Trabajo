@@ -1,20 +1,38 @@
+"use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { getLocations } from "@/resources/resource";
 import Login from "@/componentes/login";
 
+interface userData {
+  ShareCode: string;
+  FirstName: string;
+  Points:number;
+  LevelShort:string;
+}
 
 export default function Ejemplo() {
+  const [data, setData] = useState<userData>();
+
   useEffect(() => {
-    const locations = async () => {const response = await getLocations()
-      console.log(response)
-    };
-    locations();
+    const responseSessionStorage = sessionStorage.getItem("usuario"); // Corrección en el nombre
+
+    if (responseSessionStorage) {
+      try {
+        setData(JSON.parse(responseSessionStorage)); //aqui se hace el  parceo 
+      } catch (error) {
+        console.error("Error al parsear sessionStorage:", error);
+      }
+    }
   }, []);
+
+  console.log("dtos del usuario", data?.FirstName);
+
   return (
     <div className=" bg-slate-200">
-      <Login/>
+      <Login />
+
+      <div className="bg-blue-600">{data?.FirstName}</div>
       <div className="flex justify-between items-center  mb-6">
         <p className="font-medium text-2xl ">Mis Puntos iPark Rewards</p>
       </div>
@@ -26,8 +44,10 @@ export default function Ejemplo() {
               Gold
             </p>
           </div>
-          <p className=" mt-8 font-bold text-sm text-[#626262] ">PUNTOS DISPONIBLES</p>
-          <p className=" mt-2 mb-6 font-bold text-3xl">456</p>
+          <p className=" mt-8 font-bold text-sm text-[#626262] ">
+            PUNTOS DISPONIBLES
+          </p>
+          <p className=" mt-2 mb-6 font-bold text-3xl">{data?.Points}</p>
           <div className="mb-4">
             <Link href={"#"} className="text-blue-700 text-xs font-bold">
               ¿CÓMO FUNCIONA?
@@ -36,15 +56,20 @@ export default function Ejemplo() {
         </div>
         <div className="col-span-1 bg-gray-500 px-4 rounded-lg">
           <div className="mt-4 mb-8 ">
-            <p className=" mb-5 text-2xl font-bold text-white"> ¡Invita y gana!</p>
+            <p className=" mb-5 text-2xl font-bold text-white">
+              {" "}
+              ¡Invita y gana!
+            </p>
             <p className="text-white font-normal text-lg mt-5">
               Comparte este código con tus amigos y gana puntos iPark Rewards.
             </p>
           </div>
           <div className="bg-white ounded-lg py-4 pl-4 rounded-lg flex justify-between mb-6  ">
             <div>
-              <p className="font-bold text-xs leading-3 text-black mb-2">CÓDIGO DE INVITACIÓN</p>
-              <p className="font-medium text-base">iP23AV</p>
+              <p className="font-bold text-xs leading-3 text-black mb-2">
+                CÓDIGO DE INVITACIÓN
+              </p>
+              <p className="font-medium text-base">{data?.ShareCode} </p>
             </div>
             <div>
               <button className="px-4">
@@ -71,7 +96,12 @@ export default function Ejemplo() {
             </select>
             <button className="flex justify-center items-center box-border  p-2 gap-2  border border-[#121820] rounded-lg">
               {" "}
-              <Image  src="/Calendar-day.svg" alt="icon" width={32} height={42} />
+              <Image
+                src="/Calendar-day.svg"
+                alt="icon"
+                width={32}
+                height={42}
+              />
             </button>
           </div>
         </div>
@@ -214,6 +244,22 @@ export default function Ejemplo() {
             </div>
           </div>
         </div>
+        <div className="flex justify-around gap-12">
+        <div className=" flex flex-col  mt-4 items-center ">
+          <div className="flex ">
+            <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+          </div>
+          <p className="text-xs font-medium text-center mt-1 mb-8">
+            Tú estás aquí
+          </p>
+        </div><div className=" flex flex-col items-center  mt-4 ">
+          <div className="flex items-center">
+            <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
+          </div>
+          <p className="text-xs font-medium text-center mt-1 mb-8">
+            Tú estás aquí
+          </p>
+        </div>
         <div className=" flex flex-col items-center  mt-4 ">
           <div className="flex items-center">
             <Image src="/Frame-236.svg" alt="icon" width={32} height={42} />
@@ -221,6 +267,7 @@ export default function Ejemplo() {
           <p className="text-xs font-medium text-center mt-1 mb-8">
             Tú estás aquí
           </p>
+        </div>
         </div>
       </div>
     </div>
