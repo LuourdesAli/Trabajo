@@ -69,7 +69,7 @@ export default function Ejemplo() {
               <p className="font-bold text-xs leading-3 text-black mb-2">
                 CÓDIGO DE INVITACIÓN
               </p>
-              <p className="font-medium text-base">{data?.ShareCode} </p>
+              <p className="font-medium text-base"> {data?.ShareCode} </p>
             </div>
             <div>
               <button className="px-4">
