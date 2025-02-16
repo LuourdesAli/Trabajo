@@ -115,8 +115,8 @@ export default function Ejemplo() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M12 5.5V19" stroke="#7ACD8F" stroke-width="2" />
-              <path d="M6 11L12 5L18 11" stroke="#7ACD8F" stroke-width="2" />
+              <path d="M12 5.5V19" stroke="#7ACD8F" strokeWidth="2" />
+              <path d="M6 11L12 5L18 11" stroke="#7ACD8F" strokeWidth="2" />
             </svg>
             25 ago 2024
           </p>
@@ -139,8 +139,8 @@ export default function Ejemplo() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M12 4V20" stroke="#0051EE" stroke-width="2" />
-                <path d="M4 12H20" stroke="#0051EE" stroke-width="2" />
+                <path d="M12 4V20" stroke="#0051EE" strokeWidth="2" />
+                <path d="M4 12H20" stroke="#0051EE" strokeWidth="2" />
               </svg>
             </p>
           </div>
@@ -155,8 +155,8 @@ export default function Ejemplo() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M12 5V18" stroke="#F03719" stroke-width="2" />
-              <path d="M18 13L12 19L6 13" stroke="#F03719" stroke-width="2" />
+              <path d="M12 5V18" stroke="#F03719" strokeWidth="2" />
+              <path d="M18 13L12 19L6 13" stroke="#F03719" strokeWidth="2" />
             </svg>
             14 abr 2024
           </p>
@@ -179,8 +179,8 @@ export default function Ejemplo() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M12 4V20" stroke="#0051EE" stroke-width="2" />
-                <path d="M4 12H20" stroke="#0051EE" stroke-width="2" />
+                <path d="M12 4V20" stroke="#0051EE" strokeWidth="2" />
+                <path d="M4 12H20" stroke="#0051EE" strokeWidth="2" />
               </svg>
             </p>
           </div>

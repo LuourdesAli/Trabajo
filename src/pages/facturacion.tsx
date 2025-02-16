@@ -13,7 +13,7 @@ function Facturacion() {
   // };
 
   return (
-    <>
+    <div className="bg-slate-300">
       {addRfc ? (
         <AddRFC setAddRfc={setAddRfc} />
       ) : mostrarFactura ? (
@@ -156,7 +156,7 @@ function Facturacion() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
 
